@@ -52,8 +52,6 @@ walk('./', function(filePath, stat) {
       contents = contents.replace(new RegExp('[' + key + ']', 'g'), val);
     });
 
-    fs.renameSync(filePath, 'orig_' + filePath); 
-
     console.log('[ write ' + filePath + ' ]');
     fs.writeFileSync(filePath, contents); //write as UTF8
   }
